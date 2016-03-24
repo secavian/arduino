@@ -23,7 +23,7 @@ CIRCUIT
 Connect joystick (R1) approriate pins to GND and 5v
 Connect joystick (R1) x axis pin to A0
 Connect joystick (R1) y axis pin to A1
-Connect joystick (R1) button pin to 2
+Connect joystick (R1) button pin to 12
 Connect 330 Ohm Resistor (R2) between ground and negative terminal of LED 1 ("greenLed")
 Connect Positive terminal of LED 1 to Digital Pin 10 (PWM)
 Connect 330 Ohm Resistor (R3) between ground and negative terminal of LED 2 ("redLed")
@@ -31,10 +31,6 @@ Connect Positive terminal of LED 2 to Digital Pin 11 (PWM)
 Connect 330 Ohm Resistor (R4) between ground and negative terminal of LED 3 ("blueLed")
 Connect Positive terminal of LED 3 to Digital Pin 9 (PWM)
 
-Connect 10K Potentiometer (R1) outer pins to GND and 5v
-Connect 10K Potentiometer (R1) inner pin to A0
-
-                
                 +-----------------> Analog Pin 0 (X)
                _|___
               | /   |
