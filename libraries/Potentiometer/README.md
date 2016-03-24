@@ -1,4 +1,4 @@
-SecAviTools LED Arduino Library
+SecAviTools Potentiometer Arduino Library
 ========================================
 
 This archive contains an Arduino library and example sketches showing how to use this library. The library must be installed onto your computer in order for the example code to work correctly.
