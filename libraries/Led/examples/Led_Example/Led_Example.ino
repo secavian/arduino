@@ -2,11 +2,24 @@
 
 /*********************
 
-Toggle the LED on the board (pin 13) on and off
+Toggle an LED on and off
 
+===============================================
+CIRCUIT
+===============================================
+Connect 330 Ohm resistor between ground and cathode of LED
+Connect anode of LED to digital pin 11
+
+ (The cathode is typically the short led on the LED)
+
+ GND >------[ R1 ]----[ LED1 +]-----> Digital Pin 11
+
+    Where:
+        R1   = 330 Ohm Resistor
+        LED1 = Red LED
 *********************/
 
-Led led(13);            //use built in LED on pin 13
+Led led(11);
 
 void setup() {
 }

@@ -1,0 +1,31 @@
+#######################################
+# Syntax Coloring Map for BUTTON
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+Potentiometer	KEYWORD1
+AutoCenterPotentiometer	KEYWORD1
+Joystick	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+Value	KEYWORD2
+RawValue	KEYWORD2
+Max	KEYWORD2
+Max	KEYWORD2
+Pin	KEYWORD2
+Center	KEYWORD2
+CenterMax	KEYWORD2
+CenterMax	KEYWORD2
+FindCenter	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+#SOME_LITERAL	LITERAL1

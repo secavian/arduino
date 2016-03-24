@@ -16,12 +16,12 @@ void Led::On(uint8_t intensity) {
     analogWrite(_pin, _state);
 }
 
-void Led::On(bool on) {
+void Led::OnWhen(bool on) {
     if (on) On();
     else Off();
 }
 
-void Led::On(bool on, uint8_t intensity) {
+void Led::OnWhen(bool on, uint8_t intensity) {
     if (on) On(intensity);
     else Off();
 }

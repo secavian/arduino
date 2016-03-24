@@ -1,0 +1,23 @@
+#######################################
+# Syntax Coloring Map for BUTTON
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+Button	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+PressedOnHigh	KEYWORD2
+Pressed	KEYWORD2
+Pin	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+#SOME_LITERAL	LITERAL1

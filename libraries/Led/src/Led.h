@@ -11,15 +11,15 @@
 
 class Led {
 public:
-    //initializes new instance of Led class
+    //initializes new instance of Led class on the specified pin
     Led(uint8_t pin);
     
     //turns the LED on
     void On(void);
     
     //turns the LED on based on value of 'on' parameter
-    //if on is true, turn LED on, else turn LED off
-    void On(bool on);
+    //if 'on' is true, turn LED on, else turn LED off
+    void OnWhen(bool on);
     
     //turns the bool on at a given intensity. LED pin must
     //be a PWM pin (~) for this function to work.
@@ -27,11 +27,11 @@ public:
     void On(uint8_t intensity);
     
     //turns the LED on based on value of 'on' parameter
-    //if on is true, turn LED on, else turn LED off at
+    //if 'on' is true, turn LED on, else turn LED off at
     //the intensity level specified. LED pin must
     //be a PWM pin (~) for this function to work.
     //0 == off, 255 == full
-    void On(bool on, uint8_t intensity);
+    void OnWhen(bool on, uint8_t intensity);
     
     //turns the LED off
     void Off(void);

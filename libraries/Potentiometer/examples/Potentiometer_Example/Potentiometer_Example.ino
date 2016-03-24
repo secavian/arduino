@@ -7,34 +7,41 @@ Turn an LED on or off using a potentiometer. This sketch does not use the pot
 to toggle the LED directly. Rather, the value of the pot is read in as
 an analog input which is used in turn to turn the LED on or off
 
-Connect 10K Potentiometer (R1) outer pins to GND and 5v
-Connect 10K Potentiometer (R1) inner pin to A0
+===============================================
+CIRCUIT
+===============================================
+Connect 330 Ohm resistor (R1) between ground and cathode of LED
+Connect anode of LED to digital pin 11
 
- GND >--------[ R1 ]-------> 5v
-                 /
+ (The cathode is typically the short led on the LED)
+
+ Connect 10K Potentiometer (R2) outer pins to GND and 5v
+ Connect 10K Potentiometer (R2) inner pin to A0
+
+
+ GND >------[ R1 ]----[ LED1 +]-----> Digital Pin 11
+               ____
+ GND >--------| R2 |-------> 5v
+              |__/_|
                 |
                 +----------> Analog Pin 0
     
     Where:
-        R1  = 10K Ohm Potentiometer
+        R1   = 330 Ohm Resistor
+        R2   = 10K Ohm Potentiometer
+        LED1 = Red LED
 *********************/
 
+//uncomment this line to see the values used to dim the LED in the Serial monitor
+//#define DEBUG
 
-//define analog pins
-#define A0                      0
-#define A1                      1
-#define A2                      2
-#define A3                      3
-#define A4                      4
-#define A5                      5
-#define A6                      6
-#define A7                      7
-
-Led led(13);                //Use System LED
+Led led(11);
 Potentiometer pot(A0);
 
 void setup() {
+    #ifdef DEBUG
     Serial.begin(9600);
+    #endif
 }
 
 void loop() {
@@ -42,10 +49,19 @@ void loop() {
     //of the actual value read on the pin). be sure to cycle the pot once
     //between its min and max values. otherwise, the value that this function
     //returns is invalid. once the pot has been cycled, it's good to go.
-    double value = pot.Value(true);
+    int16_t value = pot.Value(true);
     
     //toggle the led based on the value read at the pot.
-    led.On(value > 512.0);
+    led.OnWhen(value > 512.0);
+
+    #ifdef DEBUG
+    Serial.print("Min:\t"); Serial.print(pot.Min()); Serial.print("\t");
+    Serial.print("Max:\t"); Serial.print(pot.Max()); Serial.print("\t");
+    Serial.print("Raw Value:\t"); Serial.print(pot.RawValue(), DEC); Serial.print("\t"); 
+    Serial.print("Adj Value:\t"); Serial.print(value, DEC); Serial.print("\t"); 
+    Serial.print("Led:\t"); Serial.println(led.State() == HIGH ? "On" : "Off");
+    delay(50);
+    #endif
 }
 
 

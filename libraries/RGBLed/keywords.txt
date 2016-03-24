@@ -1,0 +1,27 @@
+#######################################
+# Syntax Coloring Map for BUTTON
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+RGBLed	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+On	KEYWORD2
+Off	KEYWORD2
+CommonAnode	KEYWORD2
+Intensity	KEYWORD2
+Red	KEYWORD2
+Green	KEYWORD2
+Blue	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+#SOME_LITERAL	LITERAL1
