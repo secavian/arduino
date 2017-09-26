@@ -31,7 +31,7 @@ void loop(){
 
 ```
 
-#Repository Contents
+Repository Contents
 -------------------
 
 * **/examples** - Example sketches for the library (.ino). Run these from the Arduino IDE. 
@@ -41,11 +41,11 @@ void loop(){
 * **LICENSE.md** - Licence information.
 * **README.md** - This file.
 
-#Version History
+Version History
 ---------------
 * V_1.0.0 - Initial Release
 
-#License Information
+License Information
 -------------------
 
 Software License Agreement (BSD License)
