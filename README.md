@@ -16,3 +16,10 @@ Libraries include:
   * Simplifies turning led's on and off, including logical tests and toggling.
 * VoltageDetect
   * Reads voltage present on analog pin
+
+
+In addition, there are several not so basic libraries to support various devices.
+
+Libraries include:
+
+* Button:
