@@ -13,25 +13,46 @@ Sample Usage
 
 ```cpp
 
-#include <VoltageDetect.h>
+#include <ByteConverterLib.h>
 
-#define R1             1000        //1k ohms
-#define R2             1000        //1k ohms
-#define REF_VOLTS      5           //5 volts
-#define ANALOG_PIN     A0          //analog pin 0
-
-//maximum safe volts: 10v.
-//likely less due to resistor tolerances
-
-VoltageDetect volts(R1, R2, REF_VOLTS, ANALOG_PIN);
+uint8_t buffer[8] {0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00};
 
 void setup(){
     Serial.begin(9600);
+    
+    float test = 123.456;
+    float test2;
+    
+    Serial.print("value to convert: ");
+    Serial.println(test, 4);
+    
+    clearBuffer();
+    Convert.getBytes(test, buffer, 0);
+    
+    Serial.print("buffer values: ");
+    for(uint8_t i = 0; i < sizeof(buffer); i++){
+        printByte(buffer[i]);
+    }
+    Serial.println();
+    
+    test2 = Convert.getFloat(buffer, 0);
+    
+    Serial.print("value recovered from buffer: ");
+    Serial.println(test2, 4);
 }
 
-void loop(){
-    Serial.println(volts.read(), 1);
-    delay(500);
+void loop() {
+}
+
+void clearBuffer(){
+    memset(buffer, 0, sizeof(buffer));
+}
+
+void printByte(uint8_t b){
+    Serial.print("0x");
+    if(b < 0x10) { Serial.print("0"); }
+    Serial.print(b, HEX);
+    Serial.print(" ");
 }
 
 ```
