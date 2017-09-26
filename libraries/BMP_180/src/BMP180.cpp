@@ -6,7 +6,7 @@ bool BMP180::begin() {
 
 bool BMP180::begin(uint8_t resolution) {
     float c3,c4,b1;
-	
+    
     I2CLib::begin();
     
     //these are 32 bit values, but sensor returns as 16 bits
@@ -115,26 +115,27 @@ uint8_t BMP180::waitTemperature(){
 
 uint8_t BMP180::startPressure() {
     uint8_t waitTicks;
-        uint8_t mode;
-	switch (oversampling)
-	{
-		case 1:
+    
+    uint8_t mode;
+    switch (oversampling)
+    {
+        case 1:
             mode = BMP180_COMMAND_STD_MODE;
-			waitTicks = 8;
+            waitTicks = 8;
             break;
-		case 2:
+        case 2:
             mode = BMP180_COMMAND_HI_RES_MODE;
-			waitTicks = 14;
+            waitTicks = 14;
             break;
-		case 3:
+        case 3:
             mode = BMP180_COMMAND_ULT_HI_RES_MODE;
-			waitTicks = 26;
+            waitTicks = 26;
             break;
-		default:
+        default:
             mode = BMP180_COMMAND_LOW_POWER_MODE;
-			waitTicks = 5;
+            waitTicks = 5;
             break;
-	}
+    }
     
     delayTicks = writeInt(BMP180_REG_CONTROL, mode) ? waitTicks : 0;
     currentTicks = millis();
@@ -167,7 +168,7 @@ uint8_t BMP180::waitPressure(){
 }
 
 uint8_t BMP180::readCompensatedValues(){
-	float a,s,x,y,z;
+    float a,s,x,y,z;
 
     a = c5 * (uncompTemp - c6);
     tempC = a + (mc / (a + md));
@@ -182,7 +183,7 @@ uint8_t BMP180::readCompensatedValues(){
     pressInHg = pressMb * 0.02953;
     
     currentStep = BMP_STEP_START_TEMP;
-	return BMP_STATUS_SUCCESS;
+    return BMP_STATUS_SUCCESS;
 }
 
 void BMP180::setOversample(uint8_t value){
