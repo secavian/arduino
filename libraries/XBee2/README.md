@@ -74,7 +74,7 @@ void loop(){
             led.Toggle();
 
             Serial.print("\nERR ");
-            Serial.print("%) ERR CODE: 0x");
+            Serial.print(": ERR CODE: 0x");
             Serial.println(r, HEX);
             break;
     }
