@@ -11,7 +11,7 @@ Libraries include:
 * ByteConvertLib
   * Write float and integer types to byte arrays and back again
 * I2CLib
-  * Base class for I2C devices (BMP 180, BNO 056
+  * Base class for I2C devices (BMP 180, BNO 055)
 * Led
   * Simplifies turning led's on and off, including logically tests and toggling.
 * VoltageDetect
