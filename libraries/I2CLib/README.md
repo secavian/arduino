@@ -4,7 +4,8 @@ I2C Bus Library
 This simplies using devices over the I2C bus. Can be instantiated as is
 or inherited from as desired.
 
-##Repository Contents
+Repository Contents
+--------------------
 
 * **/src** - Source files for the library (.cpp, .h).
 * **keywords.txt** - Keywords from this library that will be highlighted in the Arduino IDE. 
@@ -12,15 +13,13 @@ or inherited from as desired.
 * **LICENSE.md** - Licence information.
 * **README.md** - This file.
 
-================================================================================
-
-##Version History
+Version History
+----------------------
 
 * V_1.0.0 - Initial Release
 
-================================================================================
-
-##License Information
+License Information
+----------------------
 
 Software License Agreement (BSD License)
 
