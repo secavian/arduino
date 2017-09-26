@@ -35,7 +35,7 @@
     
     ================================================================================
     
-    This library allows is a stripped down approach to sending and receiving API
+    This library is a stripped down approach to sending and receiving API
     based values with an XBee module. There are two classes, each representing
     a different Api "Frame" - Transmit Request (Frame Type 0x10) and Receive
     Packet (Frame Type 0x90). Each class contains a reference to a serial line and
