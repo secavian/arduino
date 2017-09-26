@@ -13,6 +13,6 @@ Libraries include:
 * I2CLib
   * Base class for I2C devices (BMP 180, BNO 055)
 * Led
-  * Simplifies turning led's on and off, including logically tests and toggling.
+  * Simplifies turning led's on and off, including logical tests and toggling.
 * VoltageDetect
   * Reads voltage present on analog pin
