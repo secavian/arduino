@@ -6,7 +6,7 @@ SoftwareSerial Serial1(2, 3);
 GPS_MTK3339 gps(&Serial1);
 
 void setup() {
-    Serial.begin(115200);
+    Serial.begin(9600);
     Serial1.begin(9600);
 }
 
