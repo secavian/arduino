@@ -1,11 +1,8 @@
-//TARGET == TEENSY 3.1/3.2
-
 #include <Led.h>
 #include <XBee2.h>
 
-//uncomment to use software serial instead of hardware serial
-//#include <SoftwareSerial.h>
-//SoftwareSerial Serial1(2,3);
+#include <SoftwareSerial.h>
+SoftwareSerial Serial1(2,3);
 
 Led led(LED_BUILTIN);
 
