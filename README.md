@@ -22,4 +22,11 @@ In addition, there are several not so basic libraries to support various devices
 
 Libraries include:
 
-* Button:
+* BMP_180:
+  * Library to asynchronously read temperature and pressure values from the Bosch BMP 180 barometeric sensor.
+* BNO055
+  * Library to asynchronously read values from the Bosch BNO 055 IMU sensor.
+* GPS_MTK3339
+  * Library to asynchronously read values from Adafruit's Ultimate GPS breakout
+* XBee2
+  * Library to support API communications via XBee
