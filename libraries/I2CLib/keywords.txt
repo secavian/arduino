@@ -1,0 +1,23 @@
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+I2CLib	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+begin	KEYWORD2
+readInt	KEYWORD2
+readBytes	KEYWORD2
+writeInt	KEYWORD2
+writeBytes	KEYWORD2
+deviceAddress	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+#CONST_NAME	LITERAL1
+
