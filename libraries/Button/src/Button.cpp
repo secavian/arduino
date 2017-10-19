@@ -1,62 +1,36 @@
+// 
+// 
+// 
+
 #include "Button.h"
 
-Button::Button(int8_t pin, ButtonModes mode) :_pin(pin) {
-    //button is on when signal is LOW when using pull up resistor
-    _onState = LOW;
-    
-    switch(mode){
-        case Pullup:
-            pinMode(pin, INPUT);
-            break;
-            
-        case Pulldown:
-            pinMode(pin, INPUT);
-            
-            //button is on when signal is HIGH when using pull down resistor
-            _onState = HIGH;
-            break;
-        
-        default:
-            pinMode(pin, INPUT_PULLUP);
-            break;
+Button::Button(int8_t pin) : Button(pin, true) { }
+
+Button::Button(int8_t pin, bool enableInternalPullupResistor) :_pin(pin) {
+    if(pin < 0){ return; }
+    if(enableInternalPullupResistor){
+        pinMode(pin, INPUT_PULLUP);
+        _useIntPullup = true;
+    }
+    else{
+        pinMode(pin, INPUT);
     }
 }
 
-bool Button::Pressed() {
-    int state = digitalRead(_pin);
-    
-    delay(_debounceDelay);
-    
-    return state == _onState;
+void Button::PressedOnHigh(bool pressedOnHigh){
+    _pressedOnHigh = pressedOnHigh;
 }
 
-void Button::DebounceDelay(uint32_t d){ _debounceDelay = d; }
+bool Button::PressedOnHigh() {
+    return _pressedOnHigh;
+}
 
-uint8_t Button::Pin(void) const { return _pin; }
-
-
-bool ToggleButton::On() {
-    _toggled = false;
-    int state = digitalRead(_pin);
-    
-    if(state == _onState){
-        _on = !_on;
-        _toggled = true;
+bool Button::Pressed(void) {
+    if(_pin < 0) { return false; }
+    if(_useIntPullup){
+        return digitalRead(_pin) == _useIntPullup ? LOW : HIGH;
     }
-    
-    while(state == _onState){
-        delay(_debounceDelay);
-        state = digitalRead(_pin);
-    }
-    
-    return _on;
+    return digitalRead(_pin) == _pressedOnHigh ? HIGH : LOW;
 }
 
-void ToggleButton::On(bool on){
-    _on = on;
-}
-
-bool ToggleButton::Toggled() const { return _toggled; }
-
-
-
+int8_t Button::Pin(void) { return _pin; }

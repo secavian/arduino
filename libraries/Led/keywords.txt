@@ -1,4 +1,8 @@
 #######################################
+# Syntax Coloring Map for BUTTON
+#######################################
+
+#######################################
 # Datatypes (KEYWORD1)
 #######################################
 
@@ -10,12 +14,8 @@ Led	KEYWORD1
 
 On	KEYWORD2
 OnWhen	KEYWORD2
-OnIf	KEYWORD2
 Off	KEYWORD2
-OffIf	KEYWORD2
 Toggle	KEYWORD2
-ToggleWhen	KEYWORD2
-IsOn	KEYWORD2
 Pin	KEYWORD2
 State	KEYWORD2
 

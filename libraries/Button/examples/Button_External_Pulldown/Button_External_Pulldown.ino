@@ -13,22 +13,35 @@ Note that this sketch uses an external pulldown resistor on the switch
 ===============================================
 CIRCUIT
 ===============================================
+Connect 330 Ohm resistor (R1) between ground and cathode of LED
+Connect anode of LED to digital pin 11
+ (The cathode is typically the short led on the LED)
+ 
+Connect momentary contact switch (SW1) between 5v and digital pin 8
+Connect 10K Ohm resistor (pullup) between pin side of SW1 and GND
+
  GND >------[ R1 ]----[ LED1 +]-------> Digital Pin 11
  
               ___|___
- Vcc >--------+ SW1 +------+----------> Digital Pin 8
+ 5V >---------+ SW1 +------+----------> Digital Pin 8
                            |
                            +--[ R2 ]--> GND
+    
+    Where:
+        R1   = 330 Ohm resisotr
+        R2   = 10K Ohm resistor
+        SW1  = Momentary Contact Switch
+        LED1 = Red LED
 *********************/
 
 
 Led led(11);
-Button button(12, Pulldown);
+Button button(12, false);
 
-void setup(){ }
+void setup() {
+    button.PressedOnHigh(true);
+}
 
 void loop() {
     led.OnWhen(button.Pressed());
 }
-
-
