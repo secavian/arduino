@@ -12,6 +12,8 @@ Led::Led(uint8_t pin, bool on) : _pin(pin), _state(LOW) {
 void Led::On(void) {
     _state = HIGH;
     digitalWrite(_pin, _state);
+    
+    _blinking = false;
 }
 
 void Led::On(uint8_t intensity) {
@@ -19,6 +21,8 @@ void Led::On(uint8_t intensity) {
     
     _state = (uint8_t)(255.0 * intens);
     analogWrite(_pin, _state);
+    
+    _blinking = false;
 }
 
 void Led::OnWhen(bool on) {
@@ -46,11 +50,15 @@ void Led::OffIf(bool off) {
 void Led::Off(void) {
     _state = LOW;
     digitalWrite(_pin, _state);
+    
+    _blinking = false;
 }
 
 void Led::Toggle() {
     if (_state == LOW) On();
     else Off();
+    
+    _blinking = false;
 }
 
 bool Led::IsOn(){
@@ -59,6 +67,19 @@ bool Led::IsOn(){
 
 void Led::ToggleWhen(bool toggle) {
     if (toggle) { Toggle(); }
+}
+
+void Led::Blink(uint16_t rate){
+    if(_blinking == false){ 
+        _blinking = true;
+        _blinkStart = millis();
+        _blinkRate = rate;
+    }
+    
+    if((millis() - _blinkStart) >= _blinkRate) {
+        Toggle();
+        _blinkStart = millis();
+    }
 }
 
 uint8_t Led::Pin() { return _pin; }

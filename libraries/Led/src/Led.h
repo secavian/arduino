@@ -110,6 +110,13 @@ public:
     //returns boolean test for State() == HIGH
     bool IsOn();
     
+    //Toggles the LED after a specified amount of time has expired. Setting the LED
+    //On(), Off(), Toggle() (etc), clears this behavior. This differs from Toggle()
+    //in that it attempts to ensure a minimum number of ticks have transpired first
+    //whereas Toggle() happens whenever called (or if a certain boolean condition
+    //has been met).
+    void Blink(uint16_t rate);
+    
     //gets the value of the assigned pin
     uint8_t Pin(void);
     
@@ -119,6 +126,10 @@ public:
 private:
     uint8_t _pin;
     uint8_t _state;
+    
+    uint16_t _blinkRate;
+    uint32_t _blinkStart;
+    bool     _blinking = false;
 };
 
 #endif
