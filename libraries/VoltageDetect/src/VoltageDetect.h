@@ -9,12 +9,11 @@
 
 class VoltageDetect{
 public:
-    //this is the circuit diagram            VIN >>--[R1]---+---->> VOUT (to analog pin)
-    //R1   = high side resistor                       |     |
-    //R2   = low side resistor                       [R2]  [C1]
-    //C1   = a 0.1uF capacitor                        |     |
-    //VIN  = voltage being checked                   GND   GND
-    //VOUT  = voltage delivered to analog pin
+    //this is the circuit diagram            VIN >>--[R1]---+----->> VOUT (to analog pin)
+    //R1   = high side resistor                             |
+    //R2   = low side resistor                             [R2]
+    //VIN  = voltage being checked                          |
+    //VOUT  = voltage delivered to analog pin              GND
     //
     //make sure the voltage drop across R1 is sufficient to lower the max voltage seen at
     //the analog pin to a safe level. don't exceed its tolerance.
