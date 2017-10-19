@@ -73,7 +73,8 @@ void loop(){
         case API_RXPACKET_READ_ERROR:
             led.Toggle();
 
-            Serial.print("\nERR CODE: 0x");
+            Serial.print("\nERR ");
+            Serial.print(": ERR CODE: 0x");
             Serial.println(r, HEX);
             break;
     }
