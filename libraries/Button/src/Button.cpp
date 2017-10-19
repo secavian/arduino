@@ -25,7 +25,6 @@ Button::Button(int8_t pin, ButtonModes mode) :_pin(pin) {
 bool Button::Pressed() {
     int state = digitalRead(_pin);
     
-    uint32_t ticks = millis();
     delay(_debounceDelay);
     
     return state == _onState;
