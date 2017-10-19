@@ -115,8 +115,7 @@ uint8_t BMP180::waitTemperature(){
 
 uint8_t BMP180::startPressure() {
     uint8_t waitTicks;
-    
-    uint8_t mode;
+        uint8_t mode;
     switch (oversampling)
     {
         case 1:
