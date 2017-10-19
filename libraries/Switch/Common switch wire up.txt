@@ -1,0 +1,14 @@
+      A   C
+      |   |
+    +-------+
+    | *   * |
+====| * / * |====   (Breadboard channel between sides)
+    | *   * |
+    +-------+
+      |   |
+      B   D
+
+Pins A & B are connected internally
+Pins C & D are connected internally
+
+Rails AB & CD are open by default. Closed on button press

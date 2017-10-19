@@ -1,0 +1,39 @@
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+GPS_MTK3339	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+Read	KEYWORD2
+Send	KEYWORD2
+Buffer	KEYWORD2
+FixTime	KEYWORD2
+FixQuality	KEYWORD2
+Status	KEYWORD2
+StatusChar	KEYWORD2
+Mode	KEYWORD2
+Longitude	KEYWORD2
+Latitude	KEYWORD2
+Altitude	KEYWORD2
+Geoid	KEYWORD2
+Precision	KEYWORD2
+GroundSpeed	KEYWORD2
+GroundTrack	KEYWORD2
+MagneticVariation	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+GPS_STATUS_NODATA	LITERAL1
+GPS_STATUS_READING	LITERAL1
+GPS_STATUS_SUCCESS_GGA	LITERAL1
+GPS_STATUS_SUCCESS_RMC	LITERAL1
+GPS_STATUS_SUCCESS_OTH	LITERAL1
+GPS_ERROR_CHECKSUM	LITERAL1
+GPS_ERROR_PARSE_ERR	LITERAL1
+GPS_ERROR_TIMEOUT	LITERAL1
