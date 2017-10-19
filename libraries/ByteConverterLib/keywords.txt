@@ -1,0 +1,24 @@
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+ByteConverter	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+getBytes	KEYWORD2
+getFloat	KEYWORD2
+getInt16	KEYWORD2
+getUInt16	KEYWORD2
+getInt32	KEYWORD2
+getUInt32	KEYWORD2
+getInt64	KEYWORD2
+getUInt64	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+#SOME_LITERAL	LITERAL1

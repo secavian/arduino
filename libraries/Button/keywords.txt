@@ -1,23 +1,24 @@
 #######################################
-# Syntax Coloring Map for BUTTON
-#######################################
-
-#######################################
 # Datatypes (KEYWORD1)
 #######################################
 
 Button	KEYWORD1
+ToggleButton	KEYWORD1
 
 #######################################
 # Methods and Functions (KEYWORD2)
 #######################################
 
-PressedOnHigh	KEYWORD2
 Pressed	KEYWORD2
+DebounceDelay	KEYWORD2
 Pin	KEYWORD2
+On	KEYWORD2
+Toggled	KEYWORD2
 
 #######################################
 # Constants (LITERAL1)
 #######################################
 
-#SOME_LITERAL	LITERAL1
+InternalPullup	LITERAL1
+Pullup	LITERAL1
+Pulldown	LITERAL1
