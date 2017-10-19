@@ -1,0 +1,21 @@
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+SimpleTimer	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+start	KEYWORD2
+elapsed	KEYWORD2
+remaining	KEYWORD2
+startTicks	KEYWORD2
+wait	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+#SOME_LITERAL	LITERAL1
