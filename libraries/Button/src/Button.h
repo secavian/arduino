@@ -57,7 +57,7 @@
 
 /*  buttons need a pull up/down resistor. this can be the
     internal pull up resistor if available (default) or
-    an external pull up/down button as appropriate
+    an external pull up/down resister as appropriate
 */
 enum ButtonModes { InternalPullup, Pullup, Pulldown };
 
