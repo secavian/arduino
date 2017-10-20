@@ -26,5 +26,9 @@ bool Switch::On() {
     return digitalRead(_pin) == _onState;
 }
 
+bool Switch::Off() {
+    return digitalRead(_pin) != _onState;
+}
+
 uint8_t Switch::Pin(void) const { return _pin; }
 

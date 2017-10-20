@@ -88,6 +88,9 @@ public:
     /*  gets if the switch is pressed. no debounce compensation */
     bool On(void);
     
+    /*  gets if the switch is un pressed. no debounce compensation */
+    bool Off(void);
+    
     /* gets the assigned pin for this instance */
     uint8_t Pin(void) const;
 protected:
