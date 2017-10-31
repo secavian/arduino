@@ -61,6 +61,43 @@
     #include "WProgram.h"
 #endif
 
+class TimeSpan{
+public:
+    static const uint32_t millisInSeconds = 1000;
+    static const uint32_t millisInMinutes = 60000;
+    static const uint32_t millisInHours = 3600000;
+    static const uint32_t millisInDays = 86400000;
+    
+    uint8_t days = 0;
+    uint8_t hours = 0;
+    uint8_t minutes = 0;
+    uint8_t seconds = 0;
+    uint16_t milliseconds = 0;
+    
+    void fromMillis(uint32_t millis){
+        days = (millis / millisInDays);
+        millis -= ((uint32_t)days * millisInDays);
+
+        hours = (millis / millisInHours);
+        millis -= ((uint32_t)hours * millisInHours);
+        
+        minutes = (millis / millisInMinutes);
+        millis -= ((uint32_t)minutes * millisInMinutes);
+        
+        seconds = millis / millisInSeconds;
+        milliseconds = (millis - ((uint32_t)seconds * millisInSeconds));
+    }
+    
+    uint32_t toMillis(){
+        return
+            ((uint32_t)days * millisInDays) +
+            ((uint32_t)hours * millisInHours) +
+            ((uint32_t)minutes * millisInMinutes) +
+            ((uint32_t)seconds * millisInSeconds) +
+            (uint32_t)milliseconds;
+    }
+};
+
 class SimpleTimer {
 public:
     //initializes new timer instance
@@ -68,15 +105,21 @@ public:
     
     //starts a stopwatch
     void start(void);
-        
-    //starts a countdown timer
+    
+    //starts a countdown timer. millis is the number of milliseconds to count down from
     void start(uint32_t millis);
-
+    
+    //resets countdown counter.
+    void reset(void);
+    
     //millis elapsed since starting timer
     uint32_t elapsed(void);
     
     //millis remaining until countdown complete
     uint32_t remaining(void);
+    
+    //indicates if countdown has finished.
+    bool countdownComplete(void);
     
     //waits until a number of ticks have elapsed. differs from delay(x) in that
     //delay pauses the full time. this allows a timer to start before a number
@@ -99,6 +142,9 @@ public:
     //then there will be 30ms ~ 45ms between each call. using wait(25) only delays 25ms
     //regardless of the length of time that doWork() needs to complete.
     void wait(uint32_t waitTicks);
+    
+    void timeElapsed(TimeSpan &timespan);
+    void timeRemaining(TimeSpan &timespan);
 
 private:
     uint32_t _startTicks;
